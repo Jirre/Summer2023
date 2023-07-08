@@ -8,6 +8,8 @@ namespace JvLib.Services
         {
             public static ServiceReference<JvLib.Audio.AudioServiceManager> Audio
                  = new ServiceReference<JvLib.Audio.AudioServiceManager>();
+            public static ServiceReference<Project.StateMachines.Main.GameStateMachine> GameStateMachine
+                 = new ServiceReference<Project.StateMachines.Main.GameStateMachine>();
             public static ServiceReference<JvLib.Pooling.Objects.ObjectPoolServiceManager> ObjectPools
                  = new ServiceReference<JvLib.Pooling.Objects.ObjectPoolServiceManager>();
             public static ServiceReference<JvLib.Pooling.Particles.ParticlePoolServiceManager> ParticlePools
@@ -23,6 +25,13 @@ namespace JvLib.Services
             get
             {
                 return Ref.Audio.Reference;
+            }
+        }
+        public static Project.StateMachines.Main.GameStateMachine GameStateMachine
+        {
+            get
+            {
+                return Ref.GameStateMachine.Reference;
             }
         }
         public static JvLib.Pooling.Objects.ObjectPoolServiceManager ObjectPools
@@ -58,6 +67,7 @@ namespace JvLib.Services
         private static void ClearCache()
         {
             Ref.Audio = new ServiceReference<JvLib.Audio.AudioServiceManager>();
+            Ref.GameStateMachine = new ServiceReference<Project.StateMachines.Main.GameStateMachine>();
             Ref.ObjectPools = new ServiceReference<JvLib.Pooling.Objects.ObjectPoolServiceManager>();
             Ref.ParticlePools = new ServiceReference<JvLib.Pooling.Particles.ParticlePoolServiceManager>();
             Ref.Scenes = new ServiceReference<JvLib.Scenes.SceneServiceManager>();

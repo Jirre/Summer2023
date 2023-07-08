@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add5af7611d34b579eacfb0fd30eabb3, type: 3}
+  m_Name: GameStateMachine
+  m_EditorClassIdentifier: 
+  _ClassBaseName: Game
+  _NameSpace: Project.StateMachines.Main
+  _StartState: 43db5ec6-d683-4fd4-b86c-ca81e3ecfc68
+  _AllowAnyState: 1
+  _InitializeOnAwake: 1
+  _States:
+  - _ID: 43db5ec6-d683-4fd4-b86c-ca81e3ecfc68
+    _StateName: Init
+    _FromAnyStateTransition: 0
+    _ToAnyStateTransition: 0
+    _Comments: 
+    _Position: {x: 500, y: 705}
+  - _ID: c6fb9a13-b316-47ae-a605-b371d3436bd1
+    _StateName: MenuState
+    _FromAnyStateTransition: 0
+    _ToAnyStateTransition: 0
+    _Comments: 
+    _Position: {x: 775, y: 705}
+  - _ID: 2e2d9130-699b-4e42-ab25-243921ecd962
+    _StateName: Options
+    _FromAnyStateTransition: 1
+    _ToAnyStateTransition: 1
+    _Comments: 
+    _Position: {x: 500, y: 515}
+  _Transitions:
+  - _FromState: 43db5ec6-d683-4fd4-b86c-ca81e3ecfc68
+    _ToState: c6fb9a13-b316-47ae-a605-b371d3436bd1
+    _Corners: []
