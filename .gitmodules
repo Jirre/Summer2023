@@ -1,0 +1,18 @@
+[submodule "Assets/JvLib-Core"]
+	path = Assets/JvLib-Core
+	url = https://github.com/Jirre/JvLib-Core.git
+[submodule "Assets/JvLib-Data"]
+	path = Assets/JvLib-Data
+	url = https://github.com/Jirre/JvLib-Data.git
+[submodule "Assets/JvLib-Pooling"]
+	path = Assets/JvLib-Pooling
+	url = https://github.com/Jirre/JvLib-Pooling.git
+[submodule "Assets/JvLib-StateMachine"]
+	path = Assets/JvLib-StateMachine
+	url = https://github.com/Jirre/JvLib-StateMachine.git
+[submodule "Assets/JvLib-Windows"]
+	path = Assets/JvLib-Windows
+	url = https://github.com/Jirre/JvLib-Windows.git
+[submodule "Assets/JvLib-Audio"]
+	path = Assets/JvLib-Audio
+	url = https://github.com/Jirre/JvLib-Audio.git
