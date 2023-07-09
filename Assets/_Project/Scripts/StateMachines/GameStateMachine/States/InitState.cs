@@ -17,7 +17,9 @@ namespace Project.StateMachines.Main
 
         private IEnumerator LoadDependenciesEnumerator()
         {
+            yield return Svc.Ref.Input.WaitForInstanceReadyAsync();
             yield return Svc.Ref.Window.WaitForInstanceReadyAsync();
+            yield return Svc.Ref.Gameplay.WaitForInstanceReadyAsync();
             yield return new WaitForRealSeconds(0.1f);
             
             yield return Svc.Ref.Audio.WaitForInstanceReadyAsync();

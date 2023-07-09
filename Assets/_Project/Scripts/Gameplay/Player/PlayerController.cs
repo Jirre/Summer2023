@@ -6,13 +6,10 @@ using UnityEngine.InputSystem;
 
 namespace Project.Gameplay
 {
-    [RequireComponent(
-        typeof(Rigidbody), 
-        typeof(PlayerInput))]
+    [RequireComponent(typeof(Rigidbody))]
     public partial class PlayerController : MonoBehaviour
     {
         private Rigidbody _rigidbody;
-        
         private PlayerInput _input;
 
         private void Awake()
@@ -21,10 +18,13 @@ namespace Project.Gameplay
             
             InitNavigation();
             Routine.Start(LoadPlayerInput());
+            
+            Svc.Ref.Gameplay.WaitForInstanceReady(() => Svc.Gameplay.InvokeOnPlayerChange(this));
         }
 
         private void OnDestroy()
         {
+            Svc.Gameplay.InvokeOnPlayerChange(null);
             UnloadPlayerInput();
         }
 
@@ -38,17 +38,13 @@ namespace Project.Gameplay
         private IEnumerator LoadPlayerInput()
         {
             yield return Svc.Ref.Input.WaitForInstanceReadyAsync();
-            _input ??= GetComponent<PlayerInput>();
-            _input.ActivateInput();
+            _input = Svc.Input.PlayerInput;
             
             AddNavigationListeners();
         }
 
         private void UnloadPlayerInput()
         {
-            _input ??= GetComponent<PlayerInput>();
-            _input.DeactivateInput();
-
             RemoveNavigationListeners();
         }
 
