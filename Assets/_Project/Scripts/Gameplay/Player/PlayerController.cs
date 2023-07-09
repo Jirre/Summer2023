@@ -6,11 +6,35 @@ using UnityEngine.InputSystem;
 
 namespace Project.Gameplay
 {
-    [RequireComponent(typeof(PlayerInput))]
+    [RequireComponent(
+        typeof(Rigidbody), 
+        typeof(PlayerInput))]
     public partial class PlayerController : MonoBehaviour
     {
-        private PlayerInput _input;
+        private Rigidbody _rigidbody;
         
+        private PlayerInput _input;
+
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody>();
+            
+            InitNavigation();
+            Routine.Start(LoadPlayerInput());
+        }
+
+        private void OnDestroy()
+        {
+            UnloadPlayerInput();
+        }
+
+        private void Update()
+        {
+            NavigationUpdate();
+        }
+
+        #region --- Input ---
+
         private IEnumerator LoadPlayerInput()
         {
             yield return Svc.Ref.Input.WaitForInstanceReadyAsync();
@@ -28,20 +52,6 @@ namespace Project.Gameplay
             RemoveNavigationListeners();
         }
 
-        private void Awake()
-        {
-            InitNavigation();
-            Routine.Start(LoadPlayerInput());
-        }
-
-        private void OnDestroy()
-        {
-            UnloadPlayerInput();
-        }
-
-        private void Update()
-        {
-            NavigationUpdate();
-        }
+        #endregion
     }
 }

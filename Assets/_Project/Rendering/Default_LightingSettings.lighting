@@ -6,7 +6,7 @@ LightingSettings:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DefaultLighting
+  m_Name: Default_LightingSettings
   serializedVersion: 6
   m_GIWorkflowMode: 0
   m_EnableBakedLightmaps: 1

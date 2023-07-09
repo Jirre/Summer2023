@@ -25,7 +25,7 @@ namespace Project.Gameplay
 
         private void InitNavigation()
         {
-            _lookPlane = new Plane(Vector3.up, _LookPlaneHeight);
+            _lookPlane = new Plane(Vector3.down, _LookPlaneHeight);
         }
         
         private void AddNavigationListeners()
@@ -58,27 +58,25 @@ namespace Project.Gameplay
         {
             _cachedLookInput = Vector2.zero;
 
-            Debug.Log(pInput.currentControlScheme);
-            
-            if (pInput.currentControlScheme == "Gamepad")
+            switch (pInput.currentControlScheme)
             {
-                if (_lookStyle != LookStyle.VectorToDirection)
-                    _cachedLookInput = Vector2.zero;
-                _lookStyle = LookStyle.VectorToDirection;
-                return;
-            }
-            else
-            {
-                if (_lookStyle != LookStyle.MouseLookAt)
-                    _cachedLookInput = Vector2.zero;
-                _lookStyle = LookStyle.MouseLookAt;
-                return;
+                case "Gamepad": 
+                    if (_lookStyle != LookStyle.VectorToDirection)
+                        _cachedLookInput = Vector2.zero;
+                    _lookStyle = LookStyle.VectorToDirection;
+                    return;
+                
+                default:
+                    if (_lookStyle != LookStyle.MouseLookAt)
+                        _cachedLookInput = Vector2.zero;
+                    _lookStyle = LookStyle.MouseLookAt;
+                    return;
             }
         }
 
         private void NavigationUpdate()
         {
-            transform.position += new Vector3(_cachedMovementInput.x, 0f, _cachedMovementInput.y) * _MovementSpeed * Time.deltaTime;
+            _rigidbody.position += new Vector3(_cachedMovementInput.x, 0f, _cachedMovementInput.y) * _MovementSpeed * Time.deltaTime;
 
             switch (_lookStyle)
             {
@@ -94,7 +92,7 @@ namespace Project.Gameplay
                     {
                         Vector3 position = ray.GetPoint(distance);
                         transform.localEulerAngles = new Vector3(0, 
-                            MathUtility.DegPointDirection(transform.position.x, transform.position.z, 
+                            MathUtility.DegPointDirection(_rigidbody.position.x, -_rigidbody.position.z, 
                                 position.x, -position.z), 0);
                     }
                     break;
