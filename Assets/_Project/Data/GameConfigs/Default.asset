@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550eb588994d4c30b3fe477a24100e08, type: 3}
+  m_Name: Default
+  m_EditorClassIdentifier: 
+  _ParentObject: {fileID: 11400000, guid: c96eceaa2ce0c6f40a7d6fac48ebe546, type: 2}
+  _Guid: e4b2c8b99fb6aef40bcb95c0e78ec9a2
+  name: Default
+  _WorldConfig: {fileID: 11400000, guid: 7f047cba49398724ea8e71cabcb7f98e, type: 2}
+  _CrawlerConfig: {fileID: 11400000, guid: 036a53dc730b5274392b8ffc654b83f0, type: 2}
+  _Music: {fileID: 0}
+  _Ambience: {fileID: 0}

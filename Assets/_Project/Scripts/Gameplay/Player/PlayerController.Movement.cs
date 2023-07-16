@@ -39,6 +39,9 @@ namespace Project.Gameplay
 
         private void RemoveNavigationListeners()
         {
+            if (_input == null)
+                return;
+            
             _input.actions[_MovementInput.action.name].RemoveListeners(OnMovementInput);
             _input.actions[_LookInput.action.name].RemoveListeners(OnLookInput);
             

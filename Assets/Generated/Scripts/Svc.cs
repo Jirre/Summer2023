@@ -22,6 +22,8 @@ namespace JvLib.Services
                  = new ServiceReference<JvLib.Scenes.SceneServiceManager>();
             public static ServiceReference<JvLib.Windows.WindowService> Window
                  = new ServiceReference<JvLib.Windows.WindowService>();
+            public static ServiceReference<Project.World.WorldServiceManager> World
+                 = new ServiceReference<Project.World.WorldServiceManager>();
         }
 
         public static JvLib.Audio.AudioServiceManager Audio
@@ -80,6 +82,13 @@ namespace JvLib.Services
                 return Ref.Window.Reference;
             }
         }
+        public static Project.World.WorldServiceManager World
+        {
+            get
+            {
+                return Ref.World.Reference;
+            }
+        }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
         private static void ClearCache()
@@ -92,6 +101,7 @@ namespace JvLib.Services
             Ref.ParticlePools = new ServiceReference<JvLib.Pooling.Particles.ParticlePoolServiceManager>();
             Ref.Scenes = new ServiceReference<JvLib.Scenes.SceneServiceManager>();
             Ref.Window = new ServiceReference<JvLib.Windows.WindowService>();
+            Ref.World = new ServiceReference<Project.World.WorldServiceManager>();
         }
     }
 }

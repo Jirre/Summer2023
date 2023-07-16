@@ -11,6 +11,10 @@ namespace Project.Gameplay
         private void Awake()
         {
             _player = FindObjectOfType<PlayerController>();
+        }
+
+        private void Start()
+        {
             Svc.Gameplay.OnPlayerChanged += OnPlayerChange;
         }
 

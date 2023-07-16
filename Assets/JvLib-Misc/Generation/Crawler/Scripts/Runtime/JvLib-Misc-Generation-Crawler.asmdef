@@ -1,0 +1,17 @@
+{
+    "name": "JvLib-Misc-Generation-Crawler",
+    "rootNamespace": "JvLib.Misc.Generation.Crawler",
+    "references": [
+        "GUID:e333bb6c1b63944468e6be05a0f54e76",
+        "GUID:97a32cf629635e24abfc7b3bcb609376"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

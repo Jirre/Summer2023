@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92f244c0ff2e3214abde624b5f4e8322, type: 3}
+  m_Script: {fileID: 11500000, guid: fdb0eaa9a1f840ddb747ee18364104f1, type: 3}
   m_Name: RoomConfigs
   m_EditorClassIdentifier: 
   _BaseList: {fileID: 0}
-  _Entries: []
+  _Entries:
+  - {fileID: 11400000, guid: 819c77110431d104489d99b015f2e471, type: 2}
   _DerivedLists: []
   _Guid: 
