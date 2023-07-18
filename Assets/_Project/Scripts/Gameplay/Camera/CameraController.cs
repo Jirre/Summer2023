@@ -1,15 +1,16 @@
-using System;
 using JvLib.Services;
 using UnityEngine;
 
 namespace Project.Gameplay
 {
-    public class CameraController : MonoBehaviour
+    public partial class CameraController : MonoBehaviour
     {
+        private Camera _camera;
         private PlayerController _player;
         
         private void Awake()
         {
+            _camera = GetComponentInChildren<Camera>();
             _player = FindObjectOfType<PlayerController>();
         }
 
@@ -25,7 +26,7 @@ namespace Project.Gameplay
 
         private void Update()
         {
-
+            UpdateSeeThrough();
         }
 
         private void OnPlayerChange(PlayerController pController)

@@ -1,15 +1,68 @@
-using Project.World;
+using System;
+using JvLib.Events;
+using JvLib.Services;
 using UnityEngine;
 
-namespace Project.Rooms
+namespace Project.World.Rooms
 {
     public class RoomController : MonoBehaviour
     {
         public EWorldDirection Connections { get; private set; }
+        private Vector2Int _position;
+        private bool _isActive;
+
+        private SafeEvent _onEnter = new SafeEvent();
+        public event Action OnEnter
+        {
+            add => _onEnter += value;
+            remove => _onEnter -= value;
+        }
+
+        private SafeEvent _onExit = new SafeEvent();
+        public event Action OnExit
+        {
+            add => _onExit += value;
+            remove => _onExit -= value;
+        }
         
         public void Initialize(WorldCell pCell)
         {
             Connections = pCell.Connections;
+            _position = pCell.Position;
+            Svc.World.OnCellChange += OnCellChange;
+
+            SpawnWalls();
+        }
+
+        private void SpawnWalls()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                EWorldDirection dir = (EWorldDirection)(1 << (i + 1));
+                GameObject obj;
+                if ((Connections & dir) != 0)
+                    obj = Instantiate(Svc.World.GetConnectedWall(), transform);
+                else obj = Instantiate(Svc.World.GetSolidWall(), transform);
+
+                obj.transform.localPosition = Vector3.zero;
+                obj.transform.localEulerAngles = Vector3.up * i * -90f;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            Svc.World.OnCellChange -= OnCellChange;
+        }
+
+        private void OnCellChange(Vector2Int pPosition)
+        {
+            if (_isActive && pPosition != _position)
+            {
+                _onExit.Dispatch();
+                return;
+            }
+            if (pPosition == _position)
+                _onEnter.Dispatch();
         }
         
         private void OnDrawGizmos()
