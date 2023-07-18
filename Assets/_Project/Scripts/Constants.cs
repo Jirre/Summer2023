@@ -6,7 +6,7 @@ public static class Constants
 {
     public const float ROOM_WIDTH = 20f;
     public const float ROOM_HEIGHT = 20f;
-    public const float ROOM_BORDER_WIDTH = 1f;
+    public const float ROOM_BORDER_WIDTH = 5f;
 
     public static readonly Vector3 ROOM_SIZE_XZ = new Vector3(ROOM_WIDTH, 0, ROOM_HEIGHT);
     public static readonly Vector3 ROOM_SIZE_XY = new Vector3(ROOM_WIDTH, ROOM_HEIGHT);

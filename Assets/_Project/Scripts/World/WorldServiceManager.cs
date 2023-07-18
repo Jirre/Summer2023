@@ -36,6 +36,13 @@ namespace Project.World
             add => _onBuildFinish += value;
             remove => _onBuildFinish -= value;
         }
+
+        private SafeEvent<Vector2Int> _onCellChange = new SafeEvent<Vector2Int>();
+        public event Action<Vector2Int> OnCellChange
+        {
+            add => _onCellChange += value;
+            remove => _onCellChange -= value;
+        }
         
         public bool IsServiceReady { get; private set; }
 
@@ -73,5 +80,9 @@ namespace Project.World
 
             Random = new Random(pSeed);
         }
+
+        public GameObject GetSolidWall() => _worldConfig.SolidWalls[Random.Next(_worldConfig.SolidWalls.Length)];
+        public GameObject GetConnectedWall() => _worldConfig.ConnectionWalls[Random.Next(_worldConfig.ConnectionWalls.Length)];
+        public GameObject GetExitWall() => _worldConfig.ExitWalls[Random.Next(_worldConfig.ExitWalls.Length)];
     }
 }

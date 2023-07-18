@@ -25,6 +25,11 @@ namespace Project.World
         {
             IsConnectedToRoot = true;
         }
+
+        public bool SetAsExit(EWorldDirection pDirection)
+        {
+            return false;
+        }
         
         public void Connect(WorldCell pCell)
         {
