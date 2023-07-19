@@ -5,6 +5,7 @@ using JvLib.Misc.Generation.Crawler;
 using JvLib.Services;
 using Project.Data;
 using Project.Data.World;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Random = System.Random;
 
@@ -14,8 +15,8 @@ namespace Project.World
     public partial class WorldServiceManager : MonoBehaviour, IService
     {
 #if UNITY_EDITOR
-        [SerializeField] private bool _DebugBuildOnAwake = true;
-        [SerializeField] private GameConfig _DebugBuildConfig;
+        [SerializeField, ShowIf(nameof(_DebugBuildOnAwake))] private bool _DebugBuildOnAwake = true;
+        [SerializeField, ShowIf(nameof(_DebugBuildOnAwake))] private GameConfig _DebugBuildConfig;
 #endif
 
         private WorldConfig _worldConfig;
@@ -60,6 +61,10 @@ namespace Project.World
         {
             IsServiceReady = true;
             ServiceLocator.Instance.ReportInstanceReady(this);
+#if UNITY_EDITOR
+            if (_DebugBuildOnAwake)
+                Generate();
+#endif
         }
         
         private void Update()

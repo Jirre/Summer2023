@@ -30,7 +30,8 @@ namespace Project.World.Rooms
             Connections = pCell.Connections;
             _position = pCell.Position;
             Svc.World.OnCellChange += OnCellChange;
-
+            pCell.SetPrefab(this);
+            
             SpawnWalls();
         }
 

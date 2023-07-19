@@ -5,7 +5,7 @@ namespace Project.Gameplay
     public partial class CameraController // Movement
     {
         private Vector3 _cachedTarget;
-        [SerializeField, Range(0, 1)] private float _offsetMultiplier;
+        [SerializeField, Range(0, 3)] private float _offsetMultiplier;
         [SerializeField] private float _movementSpeed;
 
         private void MovementOnPlayerChanged()

@@ -15,6 +15,7 @@ MonoBehaviour:
   _ParentObject: {fileID: 11400000, guid: f4a7f02c5552cac45ad16121c51a4a5b, type: 2}
   _Guid: 7f047cba49398724ea8e71cabcb7f98e
   name: Default
+  _Rooms: []
   _SolidWalls:
   - {fileID: 6652305028303417092, guid: 483f7f10b97a8e049bbd662fd700029f, type: 3}
   _ConnectionWalls:

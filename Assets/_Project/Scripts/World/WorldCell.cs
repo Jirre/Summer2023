@@ -2,16 +2,20 @@ using System;
 using System.Collections.Generic;
 using JvLib.Events;
 using JvLib.Misc.Generation.Crawler;
+using Project.World.Rooms;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Project.World
 {
     public class WorldCell : ICrawlerCell
     {
+        private RoomController _controller;
+        
         public Vector2Int Position { get; set; }
         public EWorldDirection Connections { get; private set; }
-
         public bool IsConnectedToRoot { get; private set; }
+        
         private List<WorldCell> _connections;
 
         private SafeEvent<WorldCell> _onConnectToRoot = new SafeEvent<WorldCell>();
@@ -29,6 +33,11 @@ namespace Project.World
         public bool SetAsExit(EWorldDirection pDirection)
         {
             return false;
+        }
+
+        public void SetPrefab(RoomController pController)
+        {
+            _controller = pController;
         }
         
         public void Connect(WorldCell pCell)
@@ -62,7 +71,9 @@ namespace Project.World
 
         public void Dispose()
         {
-            //throw new System.NotImplementedException();
+            if (_controller == null) return;
+            Object.Destroy(_controller.gameObject);
+            _controller = null;
         }
     }
 }

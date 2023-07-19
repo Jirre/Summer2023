@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _offsetMultiplier: 0.75
-  _movementSpeed: 2
+  _movementSpeed: 5
   _SeeThroughMaterials:
   - {fileID: 2100000, guid: 987ecc6e23e19704285ab7bc03987f35, type: 2}
   - {fileID: 2100000, guid: 7a10125f8044c274a9519030eca42a4f, type: 2}

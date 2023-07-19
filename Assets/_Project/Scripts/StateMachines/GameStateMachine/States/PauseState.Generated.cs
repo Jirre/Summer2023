@@ -3,11 +3,15 @@
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     // This code is generated. Your changes will be reverted on regeneration
-    // Use MenuStateState.cs
+    // Use PauseState.cs
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
-    public partial class MenuStateState
+    public partial class PauseState
     {
+        protected void TransitionToGameplayState()
+        {
+            StateMachine.TransitionTo(GameStates.Gameplay);
+        }
         protected void TransitionToInitGameState()
         {
             StateMachine.TransitionTo(GameStates.InitGame);

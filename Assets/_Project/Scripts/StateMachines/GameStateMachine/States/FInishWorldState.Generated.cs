@@ -3,14 +3,14 @@
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     // This code is generated. Your changes will be reverted on regeneration
-    // Use MenuStateState.cs
+    // Use FInishWorldState.cs
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
-    public partial class MenuStateState
+    public partial class FInishWorldState
     {
-        protected void TransitionToInitGameState()
+        protected void TransitionToInitWorldState()
         {
-            StateMachine.TransitionTo(GameStates.InitGame);
+            StateMachine.TransitionTo(GameStates.InitWorld);
         }
     }
 }

@@ -36,7 +36,85 @@ MonoBehaviour:
     _ToAnyStateTransition: 1
     _Comments: 
     _Position: {x: 500, y: 515}
+  - _ID: 64724983-114d-41ab-b048-a78dd6eb937e
+    _StateName: InitGame
+    _FromAnyStateTransition: 0
+    _ToAnyStateTransition: 0
+    _Comments: 
+    _Position: {x: 1050, y: 705}
+  - _ID: 02edb77c-2d7d-4690-acd2-c26843610ef3
+    _StateName: InitWorld
+    _FromAnyStateTransition: 0
+    _ToAnyStateTransition: 0
+    _Comments: 
+    _Position: {x: 1050, y: 805}
+  - _ID: 94561671-6cc7-4744-a7ef-aef357fe4ffa
+    _StateName: Gameplay
+    _FromAnyStateTransition: 0
+    _ToAnyStateTransition: 0
+    _Comments: 
+    _Position: {x: 1050, y: 905}
+  - _ID: d09ef9da-cbec-471a-b8f9-061910b5e1db
+    _StateName: FInishWorld
+    _FromAnyStateTransition: 0
+    _ToAnyStateTransition: 0
+    _Comments: 
+    _Position: {x: 1050, y: 1005}
+  - _ID: 79edd28e-2b4b-4e51-8eeb-ccf94a59c400
+    _StateName: GameOver
+    _FromAnyStateTransition: 0
+    _ToAnyStateTransition: 0
+    _Comments: 
+    _Position: {x: 1580, y: 805}
+  - _ID: f3286e6d-2fe1-4a36-a28c-5935b7e48c8d
+    _StateName: Pause
+    _FromAnyStateTransition: 0
+    _ToAnyStateTransition: 0
+    _Comments: 
+    _Position: {x: 1315, y: 805}
   _Transitions:
   - _FromState: 43db5ec6-d683-4fd4-b86c-ca81e3ecfc68
     _ToState: c6fb9a13-b316-47ae-a605-b371d3436bd1
     _Corners: []
+  - _FromState: c6fb9a13-b316-47ae-a605-b371d3436bd1
+    _ToState: 64724983-114d-41ab-b048-a78dd6eb937e
+    _Corners: []
+  - _FromState: d09ef9da-cbec-471a-b8f9-061910b5e1db
+    _ToState: 02edb77c-2d7d-4690-acd2-c26843610ef3
+    _Corners:
+    - {x: 995, y: 1015}
+    - {x: 995, y: 835}
+  - _FromState: 02edb77c-2d7d-4690-acd2-c26843610ef3
+    _ToState: 94561671-6cc7-4744-a7ef-aef357fe4ffa
+    _Corners: []
+  - _FromState: 94561671-6cc7-4744-a7ef-aef357fe4ffa
+    _ToState: d09ef9da-cbec-471a-b8f9-061910b5e1db
+    _Corners: []
+  - _FromState: 64724983-114d-41ab-b048-a78dd6eb937e
+    _ToState: 02edb77c-2d7d-4690-acd2-c26843610ef3
+    _Corners: []
+  - _FromState: 94561671-6cc7-4744-a7ef-aef357fe4ffa
+    _ToState: f3286e6d-2fe1-4a36-a28c-5935b7e48c8d
+    _Corners:
+    - {x: 1425, y: 935}
+  - _FromState: 94561671-6cc7-4744-a7ef-aef357fe4ffa
+    _ToState: 79edd28e-2b4b-4e51-8eeb-ccf94a59c400
+    _Corners:
+    - {x: 1690, y: 935}
+  - _FromState: f3286e6d-2fe1-4a36-a28c-5935b7e48c8d
+    _ToState: 94561671-6cc7-4744-a7ef-aef357fe4ffa
+    _Corners:
+    - {x: 1405, y: 915}
+  - _FromState: 79edd28e-2b4b-4e51-8eeb-ccf94a59c400
+    _ToState: 64724983-114d-41ab-b048-a78dd6eb937e
+    _Corners:
+    - {x: 1690, y: 715}
+  - _FromState: f3286e6d-2fe1-4a36-a28c-5935b7e48c8d
+    _ToState: 64724983-114d-41ab-b048-a78dd6eb937e
+    _Corners:
+    - {x: 1425, y: 715}
+  - _FromState: 79edd28e-2b4b-4e51-8eeb-ccf94a59c400
+    _ToState: c6fb9a13-b316-47ae-a605-b371d3436bd1
+    _Corners:
+    - {x: 1690, y: 620}
+    - {x: 865, y: 620}
