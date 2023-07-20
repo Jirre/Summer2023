@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1695939825109340491
+--- !u!1001 &1656386568907976902
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,35 +10,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23
+      value: -0.022815019
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.06
+      value: -0.08065516
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.4083945
+      value: 0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.57724684
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.40839455
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.57724684
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ce7af18f58fbfba4380635dd34a11357, type: 2}
+      objectReference: {fileID: 2100000, guid: d31072cebb1edf34f9bf9dd22498c4d2, type: 2}
     - target: {fileID: 919132149155446097, guid: 730ae6eb0cfab5e48a9946483c9976ce, type: 3}
       propertyPath: m_Name
       value: Heart Variant

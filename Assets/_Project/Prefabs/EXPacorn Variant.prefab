@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5682084245626036410
+--- !u!1001 &6915396724742577642
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -13,28 +13,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa560acfafa726f42861254c0d033d55, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa560acfafa726f42861254c0d033d55, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa560acfafa726f42861254c0d033d55, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa560acfafa726f42861254c0d033d55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa560acfafa726f42861254c0d033d55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa560acfafa726f42861254c0d033d55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0881
+      value: 3.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa560acfafa726f42861254c0d033d55, type: 3}
       propertyPath: m_LocalRotation.w
@@ -65,13 +53,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: aa560acfafa726f42861254c0d033d55, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: aa560acfafa726f42861254c0d033d55, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 87c5e7c1e54ca2a42af0adb6889e9361, type: 2}
+      objectReference: {fileID: 2100000, guid: 67ac7b06a4b24284496d1232790e2456, type: 2}
     - target: {fileID: 919132149155446097, guid: aa560acfafa726f42861254c0d033d55, type: 3}
       propertyPath: m_Name
       value: EXPacorn Variant
