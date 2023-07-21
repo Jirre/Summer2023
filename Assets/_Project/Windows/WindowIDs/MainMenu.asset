@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9bf14c65e349f4ea2c86264182d40c, type: 3}
+  m_Name: MainMenu
+  m_EditorClassIdentifier: 
+  _ParentObject: {fileID: 11400000, guid: 36ec9665ec7bc904186f659b23774708, type: 2}
+  _Guid: b20ce22edbb1bf341852adad3367db65
+  name: MainMenu
+  _Prefab: {fileID: 1416966059605407644, guid: fc606a43893426648be3df06a4d09eb1, type: 3}
+  _InstantiateOnStartup: 0
+  _Layer: {fileID: 11400000, guid: 46e9824f9970ac54ab5d0eb828aebdfc, type: 2}
+  _CanHaveFocus: 1
+  _CreateCanvas: 1
+  _CreateRaycaster: 1
+  _AutoSetInteractability: 1
+  _DynamicChildContent: 0
+  _DispatchListenersToInactiveObjects: 1

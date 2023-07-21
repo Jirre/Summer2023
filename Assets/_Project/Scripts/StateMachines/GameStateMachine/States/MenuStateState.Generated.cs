@@ -8,5 +8,9 @@
     ///////////////////////////////////////////////////////////////////////////
     public partial class MenuStateState
     {
+        protected void TransitionToInitGameState()
+        {
+            StateMachine.TransitionTo(GameStates.InitGame);
+        }
     }
 }

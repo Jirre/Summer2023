@@ -50,12 +50,14 @@ namespace Project.World
             }
         }
         
-        [Button]
+        [Button, ShowIf(nameof(_DebugBuildOnAwake))]
         public void Generate()
         {
             if (!_stateMachine.IsCurrentState(EStates.Idle))
                 throw new Exception("Can't build a crawler while another build is in progress");
 
+            Clear();
+            
             _grid ??= new Grid2D<WorldCell>();
             _unconnectedCells = new List<WorldCell>();
             
@@ -129,13 +131,12 @@ namespace Project.World
                 _unconnectedCells.Remove(pCell);
         }
 
-        [SerializeField] private RoomController _RoomPrefab;
-        
         private void RenderState(EventState<EStates> pState)
         {
             foreach (KeyValuePair<Vector2Int,WorldCell> kvp in _grid)
             {
-                GameObject gObject = Instantiate(_RoomPrefab.gameObject, transform);
+                RoomController prefab = _worldConfig.Rooms[Random.Next(_worldConfig.Rooms.Length)].Prefab;
+                GameObject gObject = Instantiate(prefab.gameObject, transform);
                 Vector3 position = new Vector3(
                     kvp.Key.x * Constants.CELL_SIZE_XY.x, 0,
                     kvp.Key.y * Constants.CELL_SIZE_XY.y);

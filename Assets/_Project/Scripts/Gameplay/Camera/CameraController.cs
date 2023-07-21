@@ -11,7 +11,7 @@ namespace Project.Gameplay
         private void Awake()
         {
             _camera = GetComponentInChildren<Camera>();
-            _player = FindObjectOfType<PlayerController>();
+            OnPlayerChange(FindObjectOfType<PlayerController>());
         }
 
         private void Start()
@@ -27,11 +27,13 @@ namespace Project.Gameplay
         private void Update()
         {
             UpdateSeeThrough();
+            MovementUpdate();
         }
 
         private void OnPlayerChange(PlayerController pController)
         {
             _player = pController;
+            MovementOnPlayerChanged();
         }
     }
 }
