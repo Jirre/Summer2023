@@ -1977,8 +1977,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77b654d7621f4a48add17fb0bc17f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FirstSelection: {fileID: 1390416306393487790}
-  _AlwaysDefaultToFirst: 0
+  _DefaultSelection: {fileID: 1390416306393487790}
+  _DefaultToFirstOnShown: 0
+  _DefaultToFirstOnFocus: 0
 --- !u!1 &4703801103688476195
 GameObject:
   m_ObjectHideFlags: 0

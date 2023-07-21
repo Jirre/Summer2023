@@ -16,5 +16,9 @@
         {
             StateMachine.TransitionTo(GameStates.InitGame);
         }
+        protected void TransitionToGameOverState()
+        {
+            StateMachine.TransitionTo(GameStates.GameOver);
+        }
     }
 }

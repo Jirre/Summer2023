@@ -6,8 +6,11 @@ using UnityEngine;
 namespace Project.Gameplay
 {
     [ServiceInterface(Name = "Gameplay")]
-    public class GameplayServiceManager : MonoBehaviour, IService
+    public partial class GameplayServiceManager : MonoBehaviour, IService
     {
+        [SerializeField] private PlayerController _PlayerPrefab;
+        private PlayerController _currentPlayer;
+        
         public bool IsServiceReady { get; private set; }
 
         private SafeEvent<PlayerController> _onPlayerChanged = new SafeEvent<PlayerController>();
@@ -28,7 +31,12 @@ namespace Project.Gameplay
             IsServiceReady = true;
             ServiceLocator.Instance.ReportInstanceReady(this);
         }
-        
 
+        public void SpawnPlayer(Vector2 pPosition)
+        {
+            if (_currentPlayer != null)
+                Destroy(_currentPlayer.gameObject);
+            _currentPlayer = Instantiate(_PlayerPrefab, pPosition, Quaternion.Euler(0, 90f, 0));
+        }
     }
 }

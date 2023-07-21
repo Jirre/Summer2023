@@ -7,16 +7,16 @@ namespace Project.UI.Windows
 {
     public class SelectOnFocus : MonoBehaviour, IOnWindowFocus, IOnWindowUnfocus, IOnWindowShown
     {
-        [SerializeField] private Selectable _FirstSelection;
+        [SerializeField] private Selectable _DefaultSelection;
         [SerializeField] private bool _DefaultToFirstOnShown;
-        [SerializeField] private bool _AlwaysDefaultToFirst;
+        [SerializeField] private bool _DefaultToFirstOnFocus;
 
         private Selectable _lastSelection;
         
         public void OnWindowFocus()
         {
-            EventSystem.current.SetSelectedGameObject(_lastSelection == null || _AlwaysDefaultToFirst ? 
-                _FirstSelection.gameObject : 
+            EventSystem.current.SetSelectedGameObject(_lastSelection == null || _DefaultToFirstOnFocus ? 
+                _DefaultSelection.gameObject : 
                 _lastSelection.gameObject);
         }
 
@@ -28,7 +28,12 @@ namespace Project.UI.Windows
         public void OnWindowShown()
         {
             if (_DefaultToFirstOnShown)
-                EventSystem.current.SetSelectedGameObject(_FirstSelection.gameObject);
+                SetToDefault();
+        }
+
+        public void SetToDefault()
+        {
+            EventSystem.current.SetSelectedGameObject(_DefaultSelection.gameObject);
         }
     }
 }
