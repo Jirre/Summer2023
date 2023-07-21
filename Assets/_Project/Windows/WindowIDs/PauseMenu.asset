@@ -19,8 +19,8 @@ MonoBehaviour:
   _InstantiateOnStartup: 0
   _Layer: {fileID: 11400000, guid: 4adea4a30fdf8384c925fcd7a125b3ef, type: 2}
   _CanHaveFocus: 1
-  _CreateCanvas: 1
+  _CreateCanvas: 0
   _CreateRaycaster: 1
-  _AutoSetInteractability: 1
+  _AutoSetInteractability: 0
   _DynamicChildContent: 0
-  _DispatchListenersToInactiveObjects: 1
+  _DispatchListenersToInactiveObjects: 0

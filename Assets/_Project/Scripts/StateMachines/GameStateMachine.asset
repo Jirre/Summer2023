@@ -118,3 +118,6 @@ MonoBehaviour:
     _Corners:
     - {x: 1690, y: 620}
     - {x: 865, y: 620}
+  - _FromState: f3286e6d-2fe1-4a36-a28c-5935b7e48c8d
+    _ToState: 79edd28e-2b4b-4e51-8eeb-ccf94a59c400
+    _Corners: []
