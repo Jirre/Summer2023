@@ -8,6 +8,7 @@ namespace Project.StateMachines.Main
         protected override void OnEnter(GameStates pPrevious)
         {
             base.OnEnter(pPrevious);
+            Svc.Window.CloseAll();
             Svc.Window.Open(WindowID.MainMenu);
         }
     }

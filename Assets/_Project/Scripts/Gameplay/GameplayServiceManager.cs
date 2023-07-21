@@ -9,7 +9,7 @@ namespace Project.Gameplay
     public partial class GameplayServiceManager : MonoBehaviour, IService
     {
         [SerializeField] private PlayerController _PlayerPrefab;
-        private PlayerController _currentPlayer;
+        [SerializeField] private PlayerController _currentPlayer;
         
         public bool IsServiceReady { get; private set; }
 
@@ -35,8 +35,12 @@ namespace Project.Gameplay
         public void SpawnPlayer(Vector2 pPosition)
         {
             if (_currentPlayer != null)
+            {
                 Destroy(_currentPlayer.gameObject);
+                _currentPlayer = null;
+            }
             _currentPlayer = Instantiate(_PlayerPrefab, pPosition, Quaternion.Euler(0, 90f, 0));
+            _onPlayerChanged.Dispatch(_currentPlayer);
         }
     }
 }

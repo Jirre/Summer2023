@@ -40,6 +40,7 @@ namespace Project.StateMachines.Main
             CreateTransition(GameStates.Pause, GameStates.InitGame);
             CreateTransition(GameStates.GameOver, GameStates.MenuState);
             CreateTransition(GameStates.Pause, GameStates.GameOver);
+            CreateTransition(GameStates.Pause, GameStates.MenuState);
 
             CreateFromAnyTransition(GameStates.Options);
             CreateToAnyTransition(GameStates.Options);

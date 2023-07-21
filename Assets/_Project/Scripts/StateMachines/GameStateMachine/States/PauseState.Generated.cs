@@ -20,5 +20,9 @@
         {
             StateMachine.TransitionTo(GameStates.GameOver);
         }
+        protected void TransitionToMenuStateState()
+        {
+            StateMachine.TransitionTo(GameStates.MenuState);
+        }
     }
 }
